@@ -1,0 +1,42 @@
+<div ng-include="'views/partials/sidecarNav.html'"></div>
+
+<!--主体-->
+<div id="siteWrapper" class="clearfix">
+    <div ng-include="'views/partials/header.html'"></div>
+
+    <!-- 展览详情 -->
+    <div id="content" class="main-content shows-detail" data-content-field="main-content" data-edit-main-image="Banner" ng-controller="showController">
+        <img src="{{show.field_exhibition_cover[0].url}}" alt="{{show.field_exhibition_cover[0].alt}}" class="img-banner" />
+        <div class="media">
+            <div class="media-left">
+                <h3 class="title">{{show.title[0].value}}</h3>
+                <p>展览信息</p>
+                <p>展览时间：{{show.field_exhibition_date[0].value}}</p>
+                <p>展览地点：{{show.field_exhibition_address[0].value}}</p>
+                <p>策划人：{{show.field_exhibition_plan[0].value}}</p>
+            </div>
+            <div class="media-body">
+                <div class="content">
+                    <h2 class="title">展览简介</h2>
+                    <div class="desc" ng-bind-html="body"></div>
+                </div>
+            </div>
+        </div>
+        <ul class="clearfix ul-shows-bottom">
+            <li ng-repeat="img in show.field_exhibition_image">
+                <a class="fancybox" fancybox rel="gallery" href="{{img.url}}" title="">
+                    <img src="{{img.url}}" alt="{{img.alt}}" />
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- end 展览详情 -->
+
+    <div ng-include="'views/partials/footer.html'"></div>
+</div>
+<!--end 主体-->
+
+<!--弹框-->
+<div ng-include="'views/partials/modal.html'"></div>
+<!--end 弹框-->

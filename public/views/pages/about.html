@@ -1,0 +1,33 @@
+<div ng-include="'views/partials/sidecarNav.html'"></div>
+
+<!--主体-->
+<div id="siteWrapper" class="clearfix">
+    <div ng-include="'views/partials/header.html'"></div>
+
+    <!-- 关于我们主体 -->
+    <div class="about-us-content main-content clearfix" ng-controller="aboutController">
+        <div class="media">
+            <div class="media-left">
+                <img src="{{img}}" alt="Fanya Ping"/>
+            </div>
+            <div class="media-body">
+                <div class="content">
+                    <h2 class="title">关于 <span class="c-red">ANGEL FAN</span></h2>
+
+                    <div class="desc" ng-bind-html="body"></div>
+                    <div class="download-wrap tr" ng-show="file != undefined">
+                        <a href="{{file}}" class="c-red" download>点击下载艺术家简历</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 关于我们主体 -->
+
+    <div ng-include="'views/partials/footer.html'"></div>
+</div>
+<!--end 主体-->
+
+<!--弹框-->
+<div ng-include="'views/partials/modal.html'"></div>
+<!--end 弹框-->

@@ -1,0 +1,40 @@
+<div ng-include="'views/partials/sidecarNav.html'"></div>
+
+<!--主体-->
+<div id="siteWrapper" class="clearfix">
+    <div ng-include="'views/partials/header.html'"></div>
+
+    <!-- 展览列表 -->
+    <div id="content" class="main-content shows-wrap" data-content-field="main-content" data-edit-main-image="Banner" ng-controller="showController">
+        <div class="sqs-layout sqs-grid-12 columns-12" data-type="page">
+            <div class="row sqs-row">
+                <div class="col sqs-col-12 span-12">
+
+                    <div class="clearfix">
+                        <!--each show-->
+                        <div class="each-show" ng-repeat="show in shows">
+                            <div class="image-block sqs-block-image">
+                                <a href="/show/{{show.nid}}" target="_blank"><img src="{{show.field_exhibition_logo}}" alt="作品图" class="op-hover" /></a>
+                            </div>
+                            <div class="desc">
+                                <a href="/show/{{show.nid}}" target="_blank">{{show.field_exhibition_plan}}</a> <span class="time">{{show.field_exhibition_date}}</span>
+                            </div>
+                            <div class="title">
+                                <a href="/show/{{show.nid}}" target="_blank" title="{{show.title}}">{{show.title}}</a>
+                            </div>
+                        </div>
+                        <!--end each show-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 展览列表 -->
+
+    <div ng-include="'views/partials/footer.html'"></div>
+</div>
+<!--end 主体-->
+
+<!--弹框-->
+<div ng-include="'views/partials/modal.html'"></div>
+<!--end 弹框-->
