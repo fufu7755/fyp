@@ -1,0 +1,81 @@
+<div ng-include="'views/partials/sidecarNav.html'"></div>
+
+<!--主体-->
+<div id="siteWrapper" class="clearfix">
+    <div ng-include="'views/partials/header.html'"></div>
+
+    <!-- 博客主体 -->
+    <div class="blog-wrap main-content clearfix" ng-controller="blogController">
+        <div class="carousel" id="myCarousel">
+            <div class="carousel-inner">
+                <!--each item-->
+                <div class="item active">
+                    <div class="col-wrap clearfix">
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(0)">{{blogs[0].title}}</a></h3>
+                            <p class="time">{{blogs[0].created}}</p>
+                        </div>
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(1)">{{blogs[1].title}}</a></h3>
+                            <p class="time">{{blogs[1].created}}</p>
+                        </div>
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(2)">{{blogs[2].title}}</a></h3>
+                            <p class="time">{{blogs[2].created}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--end each item-->
+
+                <!--each item-->
+                <div class="item">
+                    <div class="col-wrap clearfix">
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(3)">{{blogs[3].title}}</a></h3>
+                            <p class="time">{{blogs[3].created}}</p>
+                        </div>
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(4)">{{blogs[4].title}}</a></h3>
+                            <p class="time">{{blogs[4].created}}</p>
+                        </div>
+                        <div class="each-col">
+                            <h3 class="title"><a href="#" ng-click="showBlog(5)">{{blogs[5].title}}</a></h3>
+                            <p class="time">{{blogs[5].created}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--end each item-->
+
+
+
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev"></a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next"></a>
+        </div>
+
+        <div class="sep-line-wrap">
+            <hr />
+        </div>
+
+        <div class="article">
+            <h3 class="title tc">{{currentBlog.title}}</h3>
+            <div class="time tc">{{currentBlog.created}}</div>
+            <div class="from tc">{{currentBlog.field_blog_media}}</div>
+            <div class="content">
+                <div class="sub-title">{{currentBlog.field_blog_subtitle}}</div>
+                <div ng-bind-html="currentBlog.content"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end 博客主体 -->
+
+    <div ng-include="'views/partials/footer.html'"></div>
+</div>
+<!--end 主体-->
+
+<!--弹框-->
+<div ng-include="'views/partials/modal.html'"></div>
+<!--end 弹框-->

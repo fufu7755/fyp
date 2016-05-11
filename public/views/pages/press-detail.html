@@ -1,0 +1,29 @@
+<div ng-include="'views/partials/sidecarNav.html'"></div>
+
+<!--主体-->
+<div id="siteWrapper" class="clearfix">
+    <div ng-include="'views/partials/header.html'"></div>
+
+    <!-- 展览详情 -->
+    <div ng-controller="pressController">
+        <div class="media-detail">
+            <img src="{{pressdetail.field_press_cover}}" alt="媒体详情banner" class="img-banner" />
+        </div>
+        <div id="content" class="main-content media-detail" data-content-field="main-content" data-edit-main-image="Banner">
+            <div class="article">
+                <h2 class="title">{{pressdetail.title}}</h2>
+                <div class="time">2010-10-22 10:59:22 | 专访范娅萍</div>
+                <div ng-bind-html="content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end 展览详情 -->
+
+    <div ng-include="'views/partials/footer.html'"></div>
+</div>
+<!--end 主体-->
+
+<!--弹框-->
+<div ng-include="'views/partials/modal.html'"></div>
+<!--end 弹框-->
